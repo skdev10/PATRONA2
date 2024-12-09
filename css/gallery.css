@@ -1,0 +1,561 @@
+/* Global Box-Sizing and Margin/Padding Reset */
+*,
+*::before,
+*::after {
+    /* Set all elements to have a border-box model for more intuitive sizing */
+    box-sizing: border-box;
+    /* Remove default margin and padding on all elements */
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Body Styling */
+body {
+    /* Enable smooth font rendering */
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Full width of the viewport */
+    width: 100%;
+    /* Allow for better control in flex and grid layouts */
+    min-height: 100vh;
+}
+
+/* Link Styling */
+a {
+    /* Remove underline and use color inheritance */
+    text-decoration: none;
+    color: inherit;
+}
+
+/* List Reset (ul, ol) */
+ul, ol {
+    /* Remove bullets and reset padding for a clean slate */
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Heading and Paragraph Reset */
+h1, h2, h3, h4, h5, h6, p {
+    font-weight: normal; /* Reset bold default */
+    margin: 0; /* Clear margin for consistency */
+}
+
+/* Button and Input Reset */
+button,
+input,
+textarea,
+select {
+    /* Remove default styling for buttons and inputs */
+    font: inherit; /* Inherit font settings from parent */
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* Button Base */
+button {
+    cursor: pointer; /* Hand cursor on hover */
+}
+
+/* Textarea Base */
+textarea {
+    resize: vertical; /* Limit resizing to vertical */
+}
+
+/* Image Reset */
+img {
+    /* Ensure images are responsive and not overflowing */
+    max-width: 100%;
+    display: block;
+    /* Remove bottom spacing sometimes added by browsers */
+    /* vertical-align: middle; */
+}
+
+/* Table Reset */
+table {
+    /* Remove default spacing and borders */
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+/* Form Element Reset */
+input, textarea, select, button {
+    /* Remove the default font styling on forms for consistency */
+    font: inherit;
+}
+
+/* Fieldset Reset */
+fieldset {
+    border: none; /* Remove default border */
+    padding: 0; /* Clear padding */
+    margin: 0; /* Clear margin */
+}
+
+/* HTML5 Element Reset */
+/* Ensure newer HTML5 elements are block-level */
+article, aside, details, figcaption, figure, footer, header, main, nav, section {
+    display: block;
+}
+
+/* Anchor Hover State (optional) */
+a:hover {
+    text-decoration: underline; /* Optional hover effect */
+}
+
+/* Base Font Settings */
+/* Reset font size, family, and weight for better consistency */
+html {
+    font-size: 100%; /* Reset font size to ensure no unexpected scaling */
+}
+
+/* Input and Button Consistency */
+/* Remove outline when focusing (only for accessibility-focused designs) */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+/* whole body */
+
+html, body {
+    overflow-x: hidden;
+    height: 100%; 
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    background-color: #6B4F4F;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    transition: background-color 0.3s ease;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.navbar:hover {
+    background-color: #5a3d3d;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #A3C9A8;
+}
+
+.navbar .logo h1 {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+/* Navbar Links */
+.navbar .nav-links ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    margin-right: 30px;
+    position: relative;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #1bbc9b;
+    transform: translateY(-5px);
+}
+
+/* Dropdown Menu */
+.navbar .nav-links li:hover .dropdown-content {
+    display: block;
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #6B4F4F;
+    min-width: 200px;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .dropdown-content a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: #5161ce;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-menu i {
+    font-size: 30px;
+    color: white;
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+    .navbar .nav-links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #6B4F4F;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .navbar .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar .nav-links li {
+        margin: 10px 0;
+    }
+
+    .navbar .nav-links a {
+        font-size: 20px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f2f2f2;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .hero-image {
+    max-width: 300px;
+    border-radius: 8px;
+  }
+  
+  .breed-name {
+    font-size: 2.5rem;
+    margin-top: 20px;
+    color: #333;
+  }
+  
+  .breed-tagline {
+    font-size: 1.2rem;
+    color: #666;
+  }
+  
+  /* Overview Section */
+  .overview {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .overview h2 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  
+  .overview p {
+    color: #555;
+    font-size: 1.1rem;
+  }
+  
+  /* Accordion Section */
+  .accordion-section {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .accordion-item {
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .accordion-toggle {
+    background-color: #eee;
+    font-size: 1.2rem;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: #444;
+  }
+  
+  .accordion-content {
+    background-color: #fafafa;
+    padding: 15px;
+    display: none;
+    color: #666;
+    border-top: 1px solid #ddd;
+  }
+  
+  .accordion-content p {
+    font-size: 1rem;
+  }
+  
+  .accordion-content ul {
+    list-style-type: none;
+    padding: 10px 0;
+  }
+  
+  .accordion-content li {
+    padding: 5px 0;
+    font-size: 1rem;
+    color: #555;
+  }
+
+
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+header {
+    text-align: center;
+    /* background: linear-gradient(135deg, #667eea, #764ba2); */
+    background-color: #bfaf91;
+    color: white;
+    padding: 50px 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.3rem;
+}
+
+.gallery-container {
+    padding: 40px 20px;
+}
+
+.gallery-container h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.gallery-container .row {
+    margin-bottom: 30px;
+}
+
+.gallery-container img {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Slider Container: Positioned in the center, with hidden overflow to manage the slide track */
+.slider {
+    height: 250px;
+    margin: auto;
+    position: relative;
+    width: 90%;
+    display: grid;
+    place-items: center;
+    overflow: hidden; /* Hides any overflowing content (from sliding images) */
+}
+
+/* Slide Track: Holds all the slides in a horizontal row and applies an infinite scroll animation */
+.slide-track {
+    display: flex; /* Aligns slides in a row */
+    width: calc(250px * 18); /* ⧉Sets the total width based on the number of slides */
+    animation: scroll 40s linear infinite; /* Infinite horizontal scroll animation */
+}
+
+/* Pause the animation when the user hovers over the slider */
+.slide-track:hover {
+    animation-play-state: paused; /* Pauses animation on hover */
+}
+
+/* Scroll Animation: Moves the slides from right to left */
+@keyframes scroll {
+    0% {
+        transform: translateX(0); /* Initial position */
+    }
+    100% {
+        transform: translateX(calc(-250px * 9)); /* Moves the slides left by 9 slide widths */
+    }
+}
+
+/* Slide Styling: Ensures consistent slide size and centers the images */
+.slider .slide {
+    height: 200px;
+    width: 250px;
+    display: flex;
+    align-items: center; /* Centers the image vertically */
+    padding: 15px;
+    perspective: 100px; /* Adds a 3D perspective for hover effects */
+}
+
+/* Image Styling: Ensure images fill the slide, and adds hover effect */
+.slider img {
+    width: 100%; /* Ensures the image fills the entire slide */
+    transition: transform 1s; /* Smooth transition for hover effect */
+}
+
+/* Hover Effect: Slight 3D zoom effect on image hover */
+.slider img:hover {
+    transform: translateZ(20px); /* Moves the image slightly forward */
+}
+
+/* Gradient Shadows: Creates gradient overlays on both sides of the slider for a shadow effect */
+.slider::before,
+.slider::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    content: '';
+    height: 100%;
+    position: absolute;
+    width: 15%;
+    z-index: 2; /* Ensures the shadows stay on top of the images */
+}
+
+/* Left-side Gradient Shadow */
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+/* Right-side Gradient Shadow (rotated) */
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg); /* Rotates the gradient shadow for the right side */
+}
+
+/* Footer */
+.bg-footer {
+    background-color: #6B4F4F;
+    padding: 50px 0 30px;
+}
+.footer-heading {
+    letter-spacing: 2px;
+}
+
+.footer-link a {
+    color: #acacac;
+    line-height: 40px;
+    font-size: 14px;
+    transition: all 0.5s;
+}
+
+.footer-link a:hover {
+    color: #1bbc9b;
+}
+
+.contact-info {
+    color: #acacac;
+    font-size: 14px;
+}
+
+.footer-social-icon {
+    font-size: 15px;
+    height: 34px;
+    width: 34px;
+    line-height: 34px;
+    border-radius: 3px;
+    text-align: center;
+    display: inline-block;
+}
+
+.facebook {
+    background-color: #4e71a8;
+    color: #ffffff;
+}
+
+.twitter {
+    background-color: #55acee;
+    color: #ffffff;
+}
+
+.google {
+    background-color: #d6492f;
+    color: #ffffff;
+}
+
+.apple {
+    background-color: #424041;
+    color: #ffffff;
+}
+
+.footer-alt {
+    color: #acacac;
+}
+
+.footer-heading {
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-heading:after {
+    content: '';
+    width: 25px;
+    border-bottom: 1px solid #FFF;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    border-bottom: 1px solid #1bbc9b;
+}

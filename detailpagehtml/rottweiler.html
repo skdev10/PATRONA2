@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rottweiler - Dog Breed</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+        }
+
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .header {
+            background-color: #bfaf91;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+        }
+
+        .header p {
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+
+        /* Carousel */
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+        /* Breed Overview */
+        .breed-overview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .breed-overview .col-md-6 {
+            flex: 1;
+            margin-right: 30px;
+        }
+
+        .breed-overview h2 {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+
+        /* Accordion Styles */
+        .card-header {
+            background-color: #87b68b;
+            color: white;
+        }
+
+        .card-body {
+            background-color: #ecf0f1;
+        }
+
+        .card button {
+            color: white;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Did You Know Carousel */
+        .did-you-know-carousel {
+            /* margin: 50px 0px; */
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .carousel-inner {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .breadcrum {
+            display: flex;
+            margin-left: 35px;
+        }
+
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    background-color: #6B4F4F;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    transition: background-color 0.3s ease;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.navbar:hover {
+    background-color: #5a3d3d;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar .logo h1 {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #A3C9A8;
+}
+
+/* Navbar Links */
+.navbar .nav-links ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    margin-right: 30px;
+    position: relative;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #1bbc9b;
+    transform: translateY(-5px);
+}
+
+/* Dropdown Menu */
+.navbar .nav-links li:hover .dropdown-content {
+    display: block;
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #6B4F4F;
+    min-width: 200px;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .dropdown-content a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: #5161ce;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-menu i {
+    font-size: 30px;
+    color: white;
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+    .navbar .nav-links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #6B4F4F;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .navbar .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar .nav-links li {
+        margin: 10px 0;
+    }
+
+    .navbar .nav-links a {
+        font-size: 20px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+/* Footer */
+.bg-footer {
+    background-color: #6B4F4F;
+    padding: 50px 0 30px;
+}
+.footer-heading {
+    letter-spacing: 2px;
+}
+
+.footer-link a {
+    color: #acacac;
+    line-height: 40px;
+    font-size: 14px;
+    transition: all 0.5s;
+}
+
+.footer-link a:hover {
+    color: #1bbc9b;
+}
+
+.contact-info {
+    color: #acacac;
+    font-size: 14px;
+}
+
+.footer-social-icon {
+    font-size: 15px;
+    height: 34px;
+    width: 34px;
+    line-height: 34px;
+    border-radius: 3px;
+    text-align: center;
+    display: inline-block;
+}
+
+.facebook {
+    background-color: #4e71a8;
+    color: #ffffff;
+}
+
+.twitter {
+    background-color: #55acee;
+    color: #ffffff;
+}
+
+.google {
+    background-color: #d6492f;
+    color: #ffffff;
+}
+
+.apple {
+    background-color: #424041;
+    color: #ffffff;
+}
+
+.footer-alt {
+    color: #acacac;
+}
+
+.footer-heading {
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-heading:after {
+    content: '';
+    width: 25px;
+    border-bottom: 1px solid #FFF;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    border-bottom: 1px solid #1bbc9b;
+}
+
+    </style>
+</head>
+<body>
+
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="/imgvid/paw.png" alt="" width="50px">
+            <h1>PATRONA</h1>
+        </div>
+    
+        <!-- Hamburger Menu for Mobile -->
+        <div class="hamburger-menu" id="hamburger-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+    
+        <div class="nav-links" id="nav-links">
+            <ul>
+                <li><a href="/html/home.html">Home</a></li>
+                <li><a href="/html/about.html">About Us
+                    <div class="dropdown-content">
+                        <a href="/html/about.html#journey">Our Journey</a>
+                        <a href="/html/about.html#ourmisson">Our Mission</a>
+                        <a href="/html/about.html#photography">Our Photography</a>
+                        <a href="/html/about.html#myteam">My Team</a>
+                    </div>
+                </a></li>
+                <li><a href="/html/breed.html">Dog Breed</a></li>
+                <li><a href="/html/gallery.html">Gallery</a></li>
+                <li><a href="tips.html">Tips & Resources
+                    <div class="dropdown-content">
+                        <a href="/html/tips.html#nutrition">Food & Nutrition</a>
+                        <a href="/html/tips.html#training">Training</a>
+                        <a href="/html/tips.html#resources">Articles & Other Useful Links</a>
+                    </div>
+                </a></li>
+                <li><a href="/html/contact.html">Contact Us
+                    <div class="dropdown-content">
+                        <a href="/html/contact.html#contact-form">Ask</a>
+                        <a href="/html/contact.html#faq">FAQs</a>
+                        <a href="/html/contact.html#location">Location</a>
+                    </div>
+                </a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Rottweiler</h1>
+        <p>loyal / loving / confident guardian</p>
+    </header>
+
+    <!-- BreadCrumb Menu -->
+    <div class="breadcrum">
+        <a href="/html/home.html">Home</a> <p>></p> <a href="/html/breed.html">Dog's Breed</a> <p>></p> <a href="#">This Page</a>
+     </div>
+
+
+    <!-- Breed Overview Section -->
+    <div class="container breed-overview">
+        <!-- Image Carousel on the Left -->
+        <div id="breedImageCarousel" class="carousel slide col-md-4" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/imgvid/breeddetailimg/rottweiler3.jpg" alt="Afghan Hound 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="/imgvid/breeddetailimg/rottweiler2.jpg" alt="Afghan Hound 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="/imgvid/breeddetailimg/rottweiler1.jpg" alt="Afghan Hound 3">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#breedImageCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#breedImageCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <!-- Breed Overview Content on the Right -->
+        <div class="col-md-7">
+            <h2>Breed Overview</h2>
+            <p>The Rottweiler is a robust working breed of great strength descended from the mastiffs of the Roman legions. A gentle playmate and protector within the family circle, the Rottie observes the outside world with a self-assured aloofness.</p>
+            <ul>
+                <li><strong>Height:</strong> 24-27 inches</li>
+                <li><strong>Weight:</strong> 795-135 pounds</li>
+                <li><strong>Life Expectancy:</strong> 9-10 years</li>
+                <li><strong>Group:</strong> Rottweiler</li>
+                <li><strong>Colors:</strong>
+                Black  Rust Tan
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- About the Breed Section -->
+    <div class="container">
+        <h2>About the Breed</h2>
+        <p>The Rottweiler is a robust working breed of great strength descended from the mastiffs of the Roman legions. A gentle playmate and protector within the family circle, the Rottie observes the outside world with a self-assured aloofness. A male Rottweiler will stand anywhere from 24 to 27 muscular inches at the shoulder; females run a bit smaller and lighter. The glistening, short black coat with smart rust markings add to the picture of imposing strength. A thickly muscled hindquarters powers the Rottie's effortless trotting gait. A well-bred and properly raised Rottie will be calm and confident, courageous but not unduly aggressive. The aloof demeanor these world-class guardians present to outsiders belies the playfulness, and downright silliness, that endear Rotties to their loved ones. (No one told the Rottie he's not a toy breed, so he is liable plop onto your lap for a cuddle.) Early training and socialization will harness a Rottie's territorial instincts in a positive way.</p>
+    </div>
+
+    <!-- Breed History Section -->
+    <div class="container">
+        <h2>History </h2>
+        <p>The Roman Empire was the organizing force behind Western Europe's formative years, and dog breeding was among the many pursuits forever altered by the Roman genius for practical problem solving. When conquering Roman legions marched to far-flung corners of the world, they brought their herds with them as food on the hoof. The army required tough, durable dogs to move and guard the herd. Utilizing Asian mastiff types as breeding stock, the Romans developed the distant ancestor of today's Rottweiler. For centuries the legions struggled to contain Germanic tribes, the so-called barbarian hoards, massed on the Empire's northern borders. The dogs the Romans brought to these areas became foundation stock for many German breeds. In the centuries after the empire's collapse, the Roman drover dogs found work in the cattle town of Rottweil. It was here, moving herds from pasture to market and protecting all concerned from bandits and rustlers along the way, that they earned the name Rottweiler Metzgerhund, or Butcher's Dog of Rottweil. The Rottie's career in livestock ended with the rise of the railroad cattle cars in the 1800s. They found new work as police dogs, personal protectors, and all-around blue-collar dogs capable of performing various heavy-duty tasks. Rotties were among the first guide dogs for the blind, and in more recent times they distinguished themselves as search-and-rescue workers at such disaster sites as Oklahoma City and the World Trade Center. Considering the many roles the breed has played during its long history, it is remarkable that the Butcher's Dog has changed little in form and temper since its first German breed standard was drawn up in 1901.</p>
+    </div>
+
+    <!-- What to Expect When Caring For an Afghan Hound -->
+    <div class="container my-5">
+        <h2>What To Expect When Caring</h2>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Grooming Needs
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                    <div class="card-body">
+                        The Rottweiler has a straight, coarse, medium-length outer coat that lies flat. The undercoat is present on the neck and thighs. He should be brushed weekly and bathed regularly. He sheds only very moderately for most of the year, although he will shed more profusely twice a year, usually in the spring and fall. His teeth should be brushed and nails trimmed weekly. The use of a grinding tool such as a Dremel is especially effective in trimming the nails.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Exercise Requirements
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                    <div class="card-body">
+                        Rottweilers love swimming, walking, and trotting, especially with their people. The breed is muscular and athletic, and should have the opportunity to exercise on a daily basis. If there are jobs to do, Rottweilers learn easily to cart and are excellent workers in herding, tracking, and obedience. There is no limit to the canine activities that the Rottweiler can learn to do. Excess weight is not good for any dog, and exercise can help to keep your Rottweiler fit and healthy.
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Training Tips
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="card-body">
+                        The Rottweiler must be trained starting early in his life. Leadership, puppy socialization, basic training classes, and living in the owner's home are key to raising a well-mannered Rottweiler. Rottweilers are 'people dogs' who do not do well isolated from humans and life experiences. No matter the breed, dogs must live in this world complete with strange animals and people. One expert in the breed notes, 'As a Rottweiler owner, it is my responsibility to spend time, energy, and money giving my dog the opportunities to learn on a day-to-day basis.' The breed is intelligent, highly trainable and wants to please, although some may be stubborn. It is very important that discipline be consistent, fair, and firm, without being rough. Roughhousing with the Rottweiler may encourage aggression and should be avoided. Rottweilers excel in many canine sports, and the breed works with a human partner in many functional roles.
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Accordion Sections for Health and Nutrition -->
+            <div class="card">
+                <div class="card-header" id="headingHealth">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseHealth" aria-expanded="false" aria-controls="collapseHealth">
+                            Health
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseHealth" class="collapse" aria-labelledby="headingHealth" data-parent="#accordion">
+                    <div class="card-body">
+                        Before breeding, responsible Rottweiler breeders have potential sires and dams tested for health problems such as hip dysplasia, a malformation of the hip joint that can be detected via X-ray; eye diseases and heart conditions. Cancer sometimes occurs in the breed, as in all dogs. David Waters, Ph.D., DVM, of the Gerald P. Murphy Cancer Foundation, has done research focused on cancer prevention funded by the Rottweiler Health Foundation. Dr. Waters has discovered that cancer and longevity are linked to a careful vaccination regimen, thus strengthening the immune system, as well as keeping males and females intact until at least six years of age.
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingNutrition">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseNutrition" aria-expanded="false" aria-controls="collapseNutrition">
+                            Nutrition
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseNutrition" class="collapse" aria-labelledby="headingNutrition" data-parent="#accordion">
+                    <div class="card-body">
+                        The Rottweiler should do well on a high-quality dog food, whether commercially manufactured or home-prepared with your veterinarian's supervision and approval. Any diet should be appropriate to the dog's age (puppy, adult, or senior). Some dogs are prone to getting overweight, so watch your dog's calorie consumption and weight level. Treats can be an important aid in training, but giving too many can cause obesity. Learn about which human foods are safe for dogs, and which are not. Check with your vet if you have any concerns about your dog's weight or diet. Clean, fresh water should be available at all times.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Did You Know Carousel -->
+    <div class="container did-you-know-carousel">
+        <h2>Did You Know?</h2>
+        <div id="didYouKnowCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-block w-100">
+                        
+                        <p>The Rottweiler is one of the
+                            descendents of Roman drover
+                            dogs.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-block w-100">
+                        
+                        <p>In these years (1901-07) the
+                            Rottweiler again found favor as
+                            a police dog.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-block w-100">
+                        
+                        <p>Eventually, inthe early 20th
+                            century, the reinvigorated
+                            Rottweiler remerged as a
+                            police dog.</p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#didYouKnowCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#didYouKnowCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <footer class="section bg-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="">
+                        <h6 class="footer-heading text-uppercase text-white">Pages</h6>
+                        <ul class="list-unstyled footer-link mt-4">
+                          <li>
+                            <a href="/html/home.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="/html/about.html">About Us</a>
+                        </li>
+                        <li>
+                            <a href="/html/breed.html">Dog Breed</a>
+                        </li>
+                        <li>
+                            <a href="/html/gallery.html">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="/html/tips.html">Tips & Resources</a>
+                        </li>
+                        <li>
+                            <a href="/html/contact.html">Contact</a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="col-lg-3">
+                    <div class="">
+                        <h6 class="footer-heading text-uppercase text-white">Ressources</h6>
+                        <ul class="list-unstyled footer-link mt-4">
+                            <li><a href="/html/tips.html#nurtrition">Nutrition </a></li>
+                            <li><a href="/html/tips.html#training">Training</a></li>
+                            <li><a href="/html/tips.html#health">Grooming and HealthCare</a></li>
+                            <li><a href="/html/tips.html#resources">Articles and links</a></li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="col-lg-2">
+                    <div class="">
+                        <h6 class="footer-heading text-uppercase text-white">Help</h6>
+                        <ul class="list-unstyled footer-link mt-4">
+                            <li><a href="/html/contact.html#contact-form">Any Quries </a></li>
+                            <li><a href="/html/contact.html#faq">FAQs</a></li>
+                            <li><a href="/html/contact.html#location">Our Location</a></li>
+                            <!-- <li><a href="">Privacy Policy</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4">
+                    <div class="">
+                        <h6 class="footer-heading text-uppercase text-white">Contact Us</h6>
+                        <p class="contact-info mt-4">Contact us if need help withanything</p>
+                        <p class="contact-info">+92 123-456-7890</p>
+                        <div class="mt-5">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="https://www.facebook.com/AmericanKennelClub" target="_blank"><i class="fab facebook footer-social-icon fa-facebook-f"></i></i></a></li>
+                                <li class="list-inline-item"><a href="https://twitter.com/akcdoglovers" target="_blank"><i class="fab twitter footer-social-icon fa-twitter"></i></i></a></li>
+                                <li class="list-inline-item"><a href="https://www.akc.org/" target="_blank"><i class="fab google footer-social-icon fa-google"></i></i></a></li>
+                                <!-- <li class="list-inline-item"><a href="#"><i class="fab apple footer-social-icon fa-apple"></i></i></a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
+        <div class="text-center mt-5">
+            <p class="footer-alt mb-0 f-14">2024 © Patrona, All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Toggle navbar links visibility on hamburger menu click
+            $('#hamburger-menu').click(function () {
+                $('#nav-links').toggleClass('active');
+            });
+
+            // Make sure dropdown menus close when clicking outside the navbar
+            $(document).click(function (e) {
+                if (!$(e.target).closest('.navbar').length) {
+                    $('.dropdown-content').hide();
+                }
+            });
+
+            // Dropdown handling for hover
+            $('.navbar .nav-links li').hover(function () {
+                $(this).children('.dropdown-content').stop(true, true).slideDown(200);
+            }, function () {
+                $(this).children('.dropdown-content').stop(true, true).slideUp(200);
+            });
+        });
+
+    </script>
+
+    <!-- Scripts for Bootstrap and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

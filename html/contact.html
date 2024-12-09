@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Us | PATRONA Puppy Encyclopedia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/contact.css"> <!-- Link to external CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="icon" href="/imgvid/paw.png" type="icon/type">
+
+
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">
+        <img src="/imgvid/paw.png" alt="" width="50px">
+        <h1>PATRONA</h1>
+    </div>
+
+    <!-- Hamburger Menu for Mobile -->
+    <div class="hamburger-menu" id="hamburger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <div class="nav-links" id="nav-links">
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us
+                    <div class="dropdown-content">
+                        <a href="/html/about.html#journey">Our Journey</a>
+                        <a href="/html/about.html#ourmisson">Our Mission</a>
+                        <a href="/html/about.html#photography">Our Photography</a>
+                        <a href="/html/about.html#myteam">My Team</a>
+                    </div>
+                </a></li>
+            <li><a href="breed.html">Dog Breed</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="tips.html">Tips & Resources
+                    <div class="dropdown-content">
+                        <a href="/html/tips.html#nutrition">Food & Nutrition</a>
+                        <a href="/html/tips.html#training">Training</a>
+                        <a href="/html/tips.html#resources">Articles & Other Useful Links</a>
+                    </div>
+                </a></li>
+            <li><a href="contact.html">Contact Us
+                    <div class="dropdown-content">
+                        <a href="/html/contact.html#contact-form">Ask</a>
+                        <a href="/html/contact.html#faq">FAQs</a>
+                        <a href="/html/contact.html#location">Location</a>
+                    </div>
+                </a></li>
+        </ul>
+    </div>
+</div>
+
+    <!-- Main Contact Section -->
+    <section id="contact-section" class="container">
+        <div class="contact-header" data-aos="fade-down" data-aos-duration="1000">
+            <h1>Get in Touch</h1>
+            <p>We'd love to hear from you! Whether you have a question, feedback, or just want to learn more about our dog breeds, feel free to reach out.</p>
+        </div>
+
+        <div class="contact-container" data-aos="fade-up" data-aos-duration="1200">
+            <div class="contact-image" data-aos="zoom-in" data-aos-duration="1500">
+                <img src="/imgvid/web.jpg" alt="Contact Us">
+            </div>
+
+            <!-- Form with validation -->
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST"
+                id="contact-form" class="contact-form" onsubmit="return validateForm()" data-aos="fade-left" data-aos-duration="1500">
+                <input type="hidden" name="access_key" value="0694a719-12c7-4ec2-889a-bb8e79d7211d" />
+                   <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Enter your message" rows="6" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Pet Care Advice Section -->
+        <div class="container2" data-aos="fade-up" data-aos-duration="1200" >
+            <div class="image-section" data-aos="flip-left" data-aos-duration="1500">
+                <img src="/imgvid/ss2.PNG" alt="Dog with glasses">
+            </div>
+            <div class="text-section" data-aos="fade-right" data-aos-duration="1200">
+                <h1>Dog Care Advice</h1>
+                <div class="info" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                    <img src="/imgvid/ss23.PNG" alt="Dog Icon 1" class="icon">
+                    <p>Sample text. Click to select the text box. Click again or double click to start editing the text. Duis aute irure dolor.</p>
+                </div>
+                <div class="info" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                    <img src="/imgvid/ss4.PNG" alt="Dog Icon 2" class="icon">
+                    <p>Sample text. Click to select the text box. Click again or double click to start editing the text. Duis aute irure dolor.</p>
+                </div>
+                <p class="credit">Images from Freepik</p>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section" data-aos="fade-up" data-aos-duration="1200" id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="300">
+                <h3>How can I find a specific breed?</h3>
+                <p>Simply use our breed search feature by selecting categories like country, size, or behavior type to narrow down the options.</p>
+            </div>
+            <div class="faq" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="600">
+                <h3>Where do the photos come from?</h3>
+                <p>The images are sourced from reputable animal photographers and partners who have generously allowed us to use their work. All credits are included on each photo.</p>
+            </div>
+            <div class="faq" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="900">
+                <h3>Can I submit my dog's photo?</h3>
+                <p>Yes! If you'd like to contribute, please use our 'Submit a Photo' section on the main website or contact us via email.</p>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-section" data-aos="zoom-in" data-aos-duration="1500" id="location">
+            <h2>Find Us</h2>
+            <iframe src="https://www.google.com/maps/embed?..." width="100%" height="450" style="border:0;" allowfullscreen loading="lazy"></iframe>
+        </div>
+    </section>
+
+
+    <footer class="section bg-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="">
+                        <h6 class="footer-heading text-uppercase text-white">Pages</h6>
+                        <ul class="list-unstyled footer-link mt-4">
+                          <li>
+                            <a href="home.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="about.html">About Us</a>
+                        </li>
+                        <li>
+                            <a href="breed.html">Dog Breed</a>
+                        </li>
+                        <li>
+                            <a href="gallery.html">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="tips.html">Tips & Resources</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="col-lg-3">
+                    <div class="">
+                        <h6 class="footer-heading text-uppercase text-white">Ressources</h6>
+                        <ul class="list-unstyled footer-link mt-4">
+                            <li><a href="/html/tips.html#nurtrition">Nutrition </a></li>
+                            <li><a href="/html/tips.html#training">Training</a></li>
+                            <li><a href="/html/tips.html#health">Grooming and HealthCare</a></li>
+                            <li><a href="/html/tips.html#resources">Articles and links</a></li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="col-lg-2">
+                    <div class="">
+                        <h6 class="footer-heading text-uppercase text-white">Help</h6>
+                        <ul class="list-unstyled footer-link mt-4">
+                            <li><a href="/html/contact.html#contact-form">Any Quries </a></li>
+                            <li><a href="/html/contact.html#faq">FAQs</a></li>
+                            <li><a href="/html/contact.html#location">Our Location</a></li>
+                            <!-- <li><a href="">Privacy Policy</a></li> -->
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="col-lg-4">
+                    <div class="">
+                        <h6 class="footer-heading text-uppercase text-white">Contact Us</h6>
+                        <p class="contact-info mt-4">Contact us if need help withanything</p>
+                        <p class="contact-info">+92 123-456-7890</p>
+                        <div class="mt-5">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a href="https://www.facebook.com/AmericanKennelClub" target="_blank"><i class="fab facebook footer-social-icon fa-facebook-f"></i></i></a></li>
+                                <li class="list-inline-item"><a href="https://twitter.com/akcdoglovers" target="_blank"><i class="fab twitter footer-social-icon fa-twitter"></i></i></a></li>
+                                <li class="list-inline-item"><a href="https://www.akc.org/" target="_blank"><i class="fab google footer-social-icon fa-google"></i></i></a></li>
+                                <!-- <li class="list-inline-item"><a href="#"><i class="fab apple footer-social-icon fa-apple"></i></i></a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    
+        <div class="text-center mt-5">
+            <p class="footer-alt mb-0 f-14">2024 © Patrona, All Rights Reserved</p>
+        </div>
+    </footer>
+       
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!-- AOS JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        AOS.init({
+            once: true, // Animations will only play once as the user scrolls
+            duration: 1000 // Global animation duration
+        });
+
+        // JavaScript for form validation
+        function validateForm() {
+            const nameField = document.getElementById('name').value;
+            const regex = /\d/; // Regular expression to detect any number
+
+            if (regex.test(nameField)) {
+                alert("Please enter a valid name without numbers.");
+                return false; // Prevent form submission
+            }
+            return true; // Allow form submission if validation passes
+        }
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            // Toggle navbar links visibility on hamburger menu click
+            $('#hamburger-menu').click(function () {
+                $('#nav-links').toggleClass('active');
+            });
+
+            // Make sure dropdown menus close when clicking outside the navbar
+            $(document).click(function (e) {
+                if (!$(e.target).closest('.navbar').length) {
+                    $('.dropdown-content').hide();
+                }
+            });
+
+            // Dropdown handling for hover
+            $('.navbar .nav-links li').hover(function () {
+                $(this).children('.dropdown-content').stop(true, true).slideDown(200);
+            }, function () {
+                $(this).children('.dropdown-content').stop(true, true).slideUp(200);
+            });
+        });
+
+    </script>
+
+</body>
+</html>
+

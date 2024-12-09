@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dog's Breed</title>
+
+    <link rel="stylesheet" href="/css/breed.css" />
+    <link rel="icon" href="/imgvid/paw.png" type="icon/type" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  </head>
+  <body>
+  <div class="navbar">
+    <div class="logo">
+      <img src="/imgvid/paw.png" alt="" width="50px">
+      <h1>PATRONA</h1>
+    </div>
+  
+    <!-- Hamburger Menu for Mobile -->
+    <div class="hamburger-menu" id="hamburger-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+  
+    <div class="nav-links" id="nav-links">
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About Us
+            <div class="dropdown-content">
+              <a href="/html/about.html#journey">Our Journey</a>
+              <a href="/html/about.html#ourmisson">Our Mission</a>
+              <a href="/html/about.html#photography">Our Photography</a>
+              <a href="/html/about.html#myteam">My Team</a>
+            </div>
+          </a></li>
+        <li><a href="breed.html">Dog Breed</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="tips.html">Tips & Resources
+            <div class="dropdown-content">
+              <a href="/html/tips.html#nutrition">Food & Nutrition</a>
+              <a href="/html/tips.html#training">Training</a>
+              <a href="/html/tips.html#resources">Articles & Other Useful Links</a>
+            </div>
+          </a></li>
+        <li><a href="contact.html">Contact Us
+            <div class="dropdown-content">
+              <a href="/html/contact.html#contact-form">Ask</a>
+              <a href="/html/contact.html#faq">FAQs</a>
+              <a href="/html/contact.html#location">Location</a>
+            </div>
+          </a></li>
+      </ul>
+    </div>
+  </div>
+
+    <div class="gallery-page">
+      <!-- Gallery Heading -->
+      <section class="gallery-header" style="background-color: #bfaf91;">
+        <h1>Dog Breed</h1>
+        <p>
+          Explore dogs from around the
+          world.
+        </p>
+      </section>
+
+ <!-- Filters Section -->
+ <div class="filters">
+    <select id="countryFilter">
+      <option value="">Select Country</option>
+      <option value="france">France</option>
+      <option value="sweden">Sweden</option>
+      <option value="switzerland">Switzerland</option>
+      <option value="russia">Russia</option>
+      <option value="italy">Italy</option>
+      <option value="spain">Spain</option>
+      <option value="netherlands">Netherlands</option>
+    </select>
+
+    <select id="behaviorFilter">
+      <option value="">Select Behavior</option>
+      <option value="loyal">Loyal</option>
+      <option value="friendly">Friendly</option>
+      <option value="aggressive">Aggressive</option>
+      <option value="independent">Independent</option>
+    </select>
+
+    <select id="purposeFilter">
+      <option value="">Select Purpose/Type</option>
+      <option value="companion">Companion Dog</option>
+      <option value="working">Working Dog</option>
+      <option value="hunting">Hunting Dog</option>
+      <option value="herding">Herding</option>
+      <option value="hound">Hound</option>
+      <option value="sporting">Sporting</option>
+    </select>
+  </div>
+
+  <!-- Dog Cards Section -->
+  <div class="dog-gallery">
+        <!-- Sample Dog Card -->
+        <div
+          class="dog-card"
+          data-country="us"
+          data-behavior="friendly"
+          data-purpose="pet"
+        >
+          <img src="/imgvid/breeddetailimg/golden3.jpg" alt="Golden Retriever Puppy" />
+          <div class="dog-info">
+            <h3>Golden Retriever</h3>
+            <p>Country: USA</p>
+            <p>Behavior: Friendly</p>
+            <a href="/detailpagehtml/goldenretriver.html">KNOW MORE !</a>
+          </div>
+        </div>
+
+        <!-- 49 Additional Dog Cards -->
+        <div
+          class="dog-card"
+          data-country="france"
+          data-behavior="playful"
+          data-purpose="companion"
+        >
+          <img src="/imgvid/breeddetailimg/frenchbulldog1.jpg" alt="French Bulldog" />
+          <div class="dog-info">
+            <h3>French Bulldog</h3>
+            <p>Country: France</p>
+            <p>Behavior: Playful</p>
+            <a href="/detailpagehtml/frenchbulldog.html">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="germany"
+          data-behavior="protective"
+          data-purpose="working"
+        >
+          <img src="/imgvid/breeddetailimg/germanshepherd1.jpg" alt="German Shepherd" />
+          <div class="dog-info">
+            <h3>German Shepherd</h3>
+            <p>Country: Germany</p>
+            <p>Behavior: Protective</p>
+            <a href="/detailpagehtml/germanshepherd.html">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="japan"
+          data-behavior="independent"
+          data-purpose="hunting"
+        >
+          <img src="/imgvid/breeddetailimg/shibainu1.jpg" alt="Shiba Inu" />
+          <div class="dog-info">
+            <h3>Shiba Inu</h3>
+            <p>Country: Japan</p>
+            <p>Behavior: Independent</p>
+            <a href="/detailpagehtml/shibainu.html">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="sweden"
+          data-behavior="loyal"
+          data-purpose="herding"
+        >
+          <img src="/imgvid/breeddetailimg/swedishvallhund1.jpg" alt="Swedish Vallhund" />
+          <div class="dog-info">
+            <h3>Swedish Vallhund</h3>
+            <p>Country: Sweden</p>
+            <p>Behavior: Loyal</p>
+            <a href="/detailpagehtml/swedishvallhund.html">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="switzerland"
+          data-behavior="calm"
+          data-purpose="working"
+        >
+          <img src="/imgvid/breeddetailimg/bernesemountaindog2.jpg" alt="Bernese Mountain Dog" />
+          <div class="dog-info">
+            <h3>Bernese Mountain Dog</h3>
+            <p>Country: Switzerland</p>
+            <p>Behavior: Calm</p>
+            <a href="/detailpagehtml//bernesemountaindog.html">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="italy"
+          data-behavior="affectionate"
+          data-purpose="companion"
+        >
+          <img src="/imgvid/breeddetailimg/italiangreyhound.jpg" alt="Italian Greyhound" />
+          <div class="dog-info">
+            <h3>Italian Greyhound</h3>
+            <p>Country: Italy</p>
+            <p>Behavior: Affectionate</p>
+            <a href="/detailpagehtml/italiangreyhound.html">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="spain"
+          data-behavior="playful"
+          data-purpose="hound"
+        >
+          <img src="/imgvid/breeddetailimg/ibizanhound1.jpg" alt="Ibizan Hound" />
+          <div class="dog-info">
+            <h3>Ibizan Hound</h3>
+            <p>Country: Spain</p>
+            <p>Behavior: Playful</p>
+            <a href="/detailpagehtml/ibizanhound.html">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="netherlands"
+          data-behavior="intelligent"
+          data-purpose="working"
+        >
+          <img src="/imgvid/breeddetailimg/dutchshepherd1.jpg" alt="Dutch Shepherd" />
+          <div class="dog-info">
+            <h3>Dutch Shepherd</h3>
+            <p>Country: Netherlands</p>
+            <p>Behavior: Intelligent</p>
+            <a href="/detailpagehtml/dutchshepherd.html">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="russia"
+          data-behavior="independent"
+          data-purpose="hunting"
+        >
+          <img src="/imgvid/breeddetailimg/russianwolfhound2.jpg" alt="Russian Wolfhound" />
+          <div class="dog-info">
+            <h3>Russian Wolfhound</h3>
+            <p>Country: Russia</p>
+            <p>Behavior: Independent</p>
+            <a href="/detailpagehtml/russianwolfhound.html">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="us"
+          data-behavior="loyal"
+          data-purpose="guard"
+        >
+          <img src="/imgvid/breeddetailimg/rottweiler1.jpg" alt="Rottweiler" />
+          <div class="dog-info">
+            <h3>Rottweiler</h3>
+            <p>Country: USA</p>
+            <p>Behavior: Loyal</p>
+            <a href="/detailpagehtml/rottweiler.html">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="germany"
+          data-behavior="protective"
+          data-purpose="herding"
+        >
+          <img src="/imgvid/breeddetailimg/germanpinscher1.jpg" alt="German Pinscher" />
+          <div class="dog-info">
+            <h3>German Pinscher</h3>
+            <p>Country: Germany</p>
+            <p>Behavior: Protective</p>
+            <a href="/detailpagehtml/germanpinscher.html">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <!-- Additional dog entries continue in similar structure until 49 total -->
+        <!-- Using different behaviors, purposes, and countries to provide diversity -->
+
+        <!-- <div
+          class="dog-card"
+          data-country="japan"
+          data-behavior="alert"
+          data-purpose="hunting"
+        >
+          <img src="/imgvid/breeddetailimg" alt="Kishu Ken" />
+          <div class="dog-info">
+            <h3>Kishu Ken</h3>
+            <p>Country: Japan</p>
+            <p>Behavior: Alert</p>
+            <a href="/detailpagehtml/">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="france"
+          data-behavior="protective"
+          data-purpose="guard"
+        >
+          <img src="/imgvid/breeddetailimg" alt="Beauceron" />
+          <div class="dog-info">
+            <h3>Beauceron</h3>
+            <p>Country: France</p>
+            <p>Behavior: Protective</p>
+            <a href="/detailpagehtml/">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="italy"
+          data-behavior="loyal"
+          data-purpose="herding"
+        >
+          <img src="/imgvid/breeddetailimg" alt="Bergamasco Sheepdog" />
+          <div class="dog-info">
+            <h3>Bergamasco Sheepdog</h3>
+            <p>Country: Italy</p>
+            <p>Behavior: Loyal</p>
+            <a href="/detailpagehtml/">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="us"
+          data-behavior="energetic"
+          data-purpose="sporting"
+        >
+          <img src="/imgvid/breeddetailimg" alt="American Cocker Spaniel" />
+          <div class="dog-info">
+            <h3>American Cocker Spaniel</h3>
+            <p>Country: USA</p>
+            <p>Behavior: Energetic</p>
+            <a href="/detailpagehtml/">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="spain"
+          data-behavior="playful"
+          data-purpose="companion"
+        >
+          <img src="/imgvid/breeddetailimg" alt="Spanish Mastiff" />
+          <div class="dog-info">
+            <h3>Spanish Mastiff</h3>
+            <p>Country: Spain</p>
+            <p>Behavior: Playful</p>
+            <a href="/detailpagehtml/">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="netherlands"
+          data-behavior="intelligent"
+          data-purpose="working"
+        >
+          <img src="/imgvid/breeddetailimg" alt="Kooikerhondje" />
+          <div class="dog-info">
+            <h3>Kooikerhondje</h3>
+            <p>Country: Netherlands</p>
+            <p>Behavior: Intelligent</p>
+            <a href="/detailpagehtml/">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="russia"
+          data-behavior="fearless"
+          data-purpose="guard"
+        >
+          <img src="/imgvid/breeddetailimg" alt="Caucasian Shepherd Dog" />
+          <div class="dog-info">
+            <h3>Caucasian Shepherd Dog</h3>
+            <p>Country: Russia</p>
+            <p>Behavior: Fearless</p>
+            <a href="/detailpagehtml/">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="france"
+          data-behavior="affectionate"
+          data-purpose="companion"
+        >
+          <img src="/imgvid/breeddetailimg" alt="Bichon Frise" />
+          <div class="dog-info">
+            <h3>Bichon Frise</h3>
+            <p>Country: France</p>
+            <p>Behavior: Affectionate</p>
+            <a href="/detailpagehtml/">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="switzerland"
+          data-behavior="calm"
+          data-purpose="herding"
+        >
+          <img src="/imgvid/breeddetailimg" alt="Appenzeller Sennenhund" />
+          <div class="dog-info">
+            <h3>Appenzeller Sennenhund</h3>
+            <p>Country: Switzerland</p>
+            <p>Behavior: Calm</p>
+            <a href="/detailpagehtml/">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="italy"
+          data-behavior="intelligent"
+          data-purpose="hunting"
+        >
+          <img src="/imgvid/breeddetailimg" alt="Bracco Italiano" />
+          <div class="dog-info">
+            <h3>Bracco Italiano</h3>
+            <p>Country: Italy</p>
+            <p>Behavior: Intelligent</p>
+            <a href="/detailpagehtml/">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="japan"
+          data-behavior="alert"
+          data-purpose="companion"
+        >
+          <img src="/imgvid/breeddetailimg" alt="Akita" />
+          <div class="dog-info">
+            <h3>Akita</h3>
+            <p>Country: Japan</p>
+            <p>Behavior: Alert</p>
+            <a href="/detailpagehtml/">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="germany"
+          data-behavior="loyal"
+          data-purpose="working"
+        >
+          <img src="/imgvid/breeddetailimg" alt="Doberman Pinscher" />
+          <div class="dog-info">
+            <h3>Doberman Pinscher</h3>
+            <p>Country: Germany</p>
+            <p>Behavior: Loyal</p>
+            <a href="/detailpagehtml/">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="italy"
+          data-behavior="playful"
+          data-purpose="sporting"
+        >
+          <img src="/imgvid/breeddetailimg" alt="Lagotto Romagnolo" />
+          <div class="dog-info">
+            <h3>Lagotto Romagnolo</h3>
+            <p>Country: Italy</p>
+            <p>Behavior: Playful</p>
+            <a href="/detailpagehtml/">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="russia"
+          data-behavior="fearless"
+          data-purpose="working"
+        >
+          <img src="/imgvid/breeddetailimg" alt="Russian Black Terrier" />
+          <div class="dog-info">
+            <h3>Russian Black Terrier</h3>
+            <p>Country: Russia</p>
+            <p>Behavior: Fearless</p>
+            <a href="/detailpagehtml/">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="france"
+          data-behavior="intelligent"
+          data-purpose="companion"
+        >
+          <img src="/imgvid/breeddetailimg" alt="Papillon" />
+          <div class="dog-info">
+            <h3>Papillon</h3>
+            <p>Country: France</p>
+            <p>Behavior: Intelligent</p>
+            <a href="/detailpagehtml/">KNOW MORE!</a>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="netherlands"
+          data-behavior="energetic"
+          data-purpose="working"
+        >
+          <img src="puppy25.jpg" alt="Schapendoes" />
+          <div class="dog-info">
+            <h3>Schapendoes</h3>
+            <p>Country: Netherlands</p>
+            <p>Behavior: Energetic</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="switzerland"
+          data-behavior="friendly"
+          data-purpose="herding"
+        >
+          <img src="puppy26.jpg" alt="Entlebucher Mountain Dog" />
+          <div class="dog-info">
+            <h3>Entlebucher Mountain Dog</h3>
+            <p>Country: Switzerland</p>
+            <p>Behavior: Friendly</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="italy"
+          data-behavior="independent"
+          data-purpose="hunting"
+        >
+          <img src="puppy27.jpg" alt="Spinone Italiano" />
+          <div class="dog-info">
+            <h3>Spinone Italiano</h3>
+            <p>Country: Italy</p>
+            <p>Behavior: Independent</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="spain"
+          data-behavior="playful"
+          data-purpose="hound"
+        >
+          <img src="puppy28.jpg" alt="Galgo Español" />
+          <div class="dog-info">
+            <h3>Galgo Español</h3>
+            <p>Country: Spain</p>
+            <p>Behavior: Playful</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="germany"
+          data-behavior="energetic"
+          data-purpose="sporting"
+        >
+          <img src="puppy29.jpg" alt="German Shorthaired Pointer" />
+          <div class="dog-info">
+            <h3>German Shorthaired Pointer</h3>
+            <p>Country: Germany</p>
+            <p>Behavior: Energetic</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="us"
+          data-behavior="intelligent"
+          data-purpose="companion"
+        >
+          <img src="puppy30.jpg" alt="American Pit Bull Terrier" />
+          <div class="dog-info">
+            <h3>American Pit Bull Terrier</h3>
+            <p>Country: USA</p>
+            <p>Behavior: Intelligent</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="france"
+          data-behavior="affectionate"
+          data-purpose="companion"
+        >
+          <img src="puppy31.jpg" alt="French Bulldog" />
+          <div class="dog-info">
+            <h3>French Bulldog</h3>
+            <p>Country: France</p>
+            <p>Behavior: Affectionate</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="sweden"
+          data-behavior="loyal"
+          data-purpose="herding"
+        >
+          <img src="puppy32.jpg" alt="Swedish Vallhund" />
+          <div class="dog-info">
+            <h3>Swedish Vallhund</h3>
+            <p>Country: Sweden</p>
+            <p>Behavior: Loyal</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="italy"
+          data-behavior="friendly"
+          data-purpose="companion"
+        >
+          <img src="puppy33.jpg" alt="Bolognese" />
+          <div class="dog-info">
+            <h3>Bolognese</h3>
+            <p>Country: Italy</p>
+            <p>Behavior: Friendly</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="russia"
+          data-behavior="fearless"
+          data-purpose="guard"
+        >
+          <img src="puppy34.jpg" alt="Moscow Watchdog" />
+          <div class="dog-info">
+            <h3>Moscow Watchdog</h3>
+            <p>Country: Russia</p>
+            <p>Behavior: Fearless</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="switzerland"
+          data-behavior="gentle"
+          data-purpose="working"
+        >
+          <img src="puppy35.jpg" alt="Saint Bernard" />
+          <div class="dog-info">
+            <h3>Saint Bernard</h3>
+            <p>Country: Switzerland</p>
+            <p>Behavior: Gentle</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="italy"
+          data-behavior="brave"
+          data-purpose="hunting"
+        >
+          <img src="puppy36.jpg" alt="Italian Greyhound" />
+          <div class="dog-info">
+            <h3>Italian Greyhound</h3>
+            <p>Country: Italy</p>
+            <p>Behavior: Brave</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="netherlands"
+          data-behavior="playful"
+          data-purpose="sporting"
+        >
+          <img src="puppy37.jpg" alt="Dutch Shepherd" />
+          <div class="dog-info">
+            <h3>Dutch Shepherd</h3>
+            <p>Country: Netherlands</p>
+            <p>Behavior: Playful</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="spain"
+          data-behavior="protective"
+          data-purpose="herding"
+        >
+          <img src="puppy38.jpg" alt="Majorca Shepherd Dog" />
+          <div class="dog-info">
+            <h3>Majorca Shepherd Dog</h3>
+            <p>Country: Spain</p>
+            <p>Behavior: Protective</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="france"
+          data-behavior="intelligent"
+          data-purpose="companion"
+        >
+          <img src="puppy39.jpg" alt="Pyrenean Shepherd" />
+          <div class="dog-info">
+            <h3>Pyrenean Shepherd</h3>
+            <p>Country: France</p>
+            <p>Behavior: Intelligent</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="sweden"
+          data-behavior="energetic"
+          data-purpose="sporting"
+        >
+          <img src="puppy40.jpg" alt="Norrbottenspets" />
+          <div class="dog-info">
+            <h3>Norrbottenspets</h3>
+            <p>Country: Sweden</p>
+            <p>Behavior: Energetic</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="germany"
+          data-behavior="alert"
+          data-purpose="guard"
+        >
+          <img src="puppy41.jpg" alt="Leonberger" />
+          <div class="dog-info">
+            <h3>Leonberger</h3>
+            <p>Country: Germany</p>
+            <p>Behavior: Alert</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="netherlands"
+          data-behavior="alert"
+          data-purpose="guard"
+        >
+          <img src="puppy42.jpg" alt="Dutch Smoushond" />
+          <div class="dog-info">
+            <h3>Dutch Smoushond</h3>
+            <p>Country: Netherlands</p>
+            <p>Behavior: Alert</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="italy"
+          data-behavior="energetic"
+          data-purpose="companion"
+        >
+          <img src="puppy43.jpg" alt="Cane Corso" />
+          <div class="dog-info">
+            <h3>Cane Corso</h3>
+            <p>Country: Italy</p>
+            <p>Behavior: Energetic</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="spain"
+          data-behavior="calm"
+          data-purpose="hunting"
+        >
+          <img src="puppy44.jpg" alt="Ibizan Hound" />
+          <div class="dog-info">
+            <h3>Ibizan Hound</h3>
+            <p>Country: Spain</p>
+            <p>Behavior: Calm</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="russia"
+          data-behavior="fearless"
+          data-purpose="guard"
+        >
+          <img src="puppy45.jpg" alt="Russian Toy" />
+          <div class="dog-info">
+            <h3>Russian Toy</h3>
+            <p>Country: Russia</p>
+            <p>Behavior: Fearless</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="sweden"
+          data-behavior="alert"
+          data-purpose="companion"
+        >
+          <img src="puppy46.jpg" alt="Swedish Lapphund" />
+          <div class="dog-info">
+            <h3>Swedish Lapphund</h3>
+            <p>Country: Sweden</p>
+            <p>Behavior: Alert</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="switzerland"
+          data-behavior="calm"
+          data-purpose="working"
+        >
+          <img src="puppy47.jpg" alt="Great Swiss Mountain Dog" />
+          <div class="dog-info">
+            <h3>Great Swiss Mountain Dog</h3>
+            <p>Country: Switzerland</p>
+            <p>Behavior: Calm</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="france"
+          data-behavior="playful"
+          data-purpose="companion"
+        >
+          <img src="puppy48.jpg" alt="Petit Basset Griffon Vendéen" />
+          <div class="dog-info">
+            <h3>Petit Basset Griffon Vendéen</h3>
+            <p>Country: France</p>
+            <p>Behavior: Playful</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="italy"
+          data-behavior="loyal"
+          data-purpose="hunting"
+        >
+          <img src="puppy49.jpg" alt="Maremma Sheepdog" />
+          <div class="dog-info">
+            <h3>Maremma Sheepdog</h3>
+            <p>Country: Italy</p>
+            <p>Behavior: Loyal</p>
+          </div>
+        </div>
+
+        <div
+          class="dog-card"
+          data-country="netherlands"
+          data-behavior="loyal"
+          data-purpose="companion"
+        >
+          <img src="puppy50.jpg" alt="Kooikerhondje" />
+          <div class="dog-info">
+            <h3>Kooikerhondje</h3>
+            <p>Country: Netherlands</p>
+            <p>Behavior: Loyal</p>
+          </div>
+        </div> -->
+
+      
+    </div>
+
+   <footer class="section bg-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="">
+                    <h6 class="footer-heading text-uppercase text-white">Pages</h6>
+                    <ul class="list-unstyled footer-link mt-4">
+                      <li>
+                        <a href="home.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About Us</a>
+                    </li>
+                    <li>
+                        <a href="breed.html">Dog Breed</a>
+                    </li>
+                    <li>
+                        <a href="gallery.html">Gallery</a>
+                    </li>
+                    <li>
+                        <a href="tips.html">Tips & Resources</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="">
+                    <h6 class="footer-heading text-uppercase text-white">Ressources</h6>
+                    <ul class="list-unstyled footer-link mt-4">
+                        <li><a href="/html/tips.html#nurtrition">Nutrition </a></li>
+                        <li><a href="/html/tips.html#training">Training</a></li>
+                        <li><a href="/html/tips.html#health">Grooming and HealthCare</a></li>
+                        <li><a href="/html/tips.html#resources">Articles and links</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-2">
+                <div class="">
+                    <h6 class="footer-heading text-uppercase text-white">Help</h6>
+                    <ul class="list-unstyled footer-link mt-4">
+                        <li><a href="/html/contact.html#contact-form">Any Quries </a></li>
+                        <li><a href="/html/contact.html#faq">FAQs</a></li>
+                        <li><a href="/html/contact.html#location">Our Location</a></li>
+                        <!-- <li><a href="">Privacy Policy</a></li> -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="">
+                    <h6 class="footer-heading text-uppercase text-white">Contact Us</h6>
+                    <p class="contact-info mt-4">Contact us if need help withanything</p>
+                    <p class="contact-info">+92 123-456-7890</p>
+                    <div class="mt-5">
+                        <ul class="list-inline">
+                            <li class="list-inline-item"><a href="https://www.facebook.com/AmericanKennelClub" target="_blank"><i class="fab facebook footer-social-icon fa-facebook-f"></i></i></a></li>
+                            <li class="list-inline-item"><a href="https://twitter.com/akcdoglovers" target="_blank"><i class="fab twitter footer-social-icon fa-twitter"></i></i></a></li>
+                            <li class="list-inline-item"><a href="https://www.akc.org/" target="_blank"><i class="fab google footer-social-icon fa-google"></i></i></a></li>
+                            <!-- <li class="list-inline-item"><a href="#"><i class="fab apple footer-social-icon fa-apple"></i></i></a></li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <p class="footer-alt mb-0 f-14">2024 © Patrona, All Rights Reserved</p>
+    </div>
+</footer>
+  
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+          // Filter Function
+          function filterDogs() {
+            var country = $('#countryFilter').val().toLowerCase();
+            var behavior = $('#behaviorFilter').val().toLowerCase();
+            var purpose = $('#purposeFilter').val().toLowerCase();
+    
+            // Loop through each dog card
+            $('.dog-card').each(function() {
+              var cardCountry = $(this).data('country').toLowerCase();
+              var cardBehavior = $(this).data('behavior').toLowerCase();
+              var cardPurpose = $(this).data('purpose').toLowerCase();
+    
+              // Check if the card matches all selected filters
+              if ((country === "" || cardCountry.includes(country)) &&
+                  (behavior === "" || cardBehavior.includes(behavior)) &&
+                  (purpose === "" || cardPurpose.includes(purpose))) {
+                $(this).show(); // Show the card
+              } else {
+                $(this).hide(); // Hide the card
+              }
+            });
+          }
+    
+          // When any filter changes, apply the filter function
+          $('#countryFilter, #behaviorFilter, #purposeFilter').change(function() {
+            filterDogs();
+          });
+    
+          // Initial filter on page load (optional)
+          filterDogs();
+        });
+
+
+      </script>
+
+      <script>
+        $(document).ready(function () {
+          // Toggle navbar links visibility on hamburger menu click
+          $('#hamburger-menu').click(function () {
+            $('#nav-links').toggleClass('active');
+          });
+
+          // Make sure dropdown menus close when clicking outside the navbar
+          $(document).click(function (e) {
+            if (!$(e.target).closest('.navbar').length) {
+              $('.dropdown-content').hide();
+            }
+          });
+
+          // Dropdown handling for hover
+          $('.navbar .nav-links li').hover(function () {
+            $(this).children('.dropdown-content').stop(true, true).slideDown(200);
+          }, function () {
+            $(this).children('.dropdown-content').stop(true, true).slideUp(200);
+          });
+        });
+
+      </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  </body>
+</html>

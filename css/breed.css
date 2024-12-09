@@ -1,0 +1,629 @@
+/* Global Box-Sizing and Margin/Padding Reset */
+*,
+*::before,
+*::after {
+    /* Set all elements to have a border-box model for more intuitive sizing */
+    box-sizing: border-box;
+    /* Remove default margin and padding on all elements */
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Body Styling */
+body {
+    /* Enable smooth font rendering */
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Full width of the viewport */
+    width: 100%;
+    /* Allow for better control in flex and grid layouts */
+    min-height: 100vh;
+}
+
+/* Link Styling */
+a {
+    /* Remove underline and use color inheritance */
+    text-decoration: none;
+    color: inherit;
+}
+
+/* List Reset (ul, ol) */
+ul, ol {
+    /* Remove bullets and reset padding for a clean slate */
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Heading and Paragraph Reset */
+h1, h2, h3, h4, h5, h6, p {
+    font-weight: normal; /* Reset bold default */
+    margin: 0; /* Clear margin for consistency */
+}
+
+/* Button and Input Reset */
+button,
+input,
+textarea,
+select {
+    /* Remove default styling for buttons and inputs */
+    font: inherit; /* Inherit font settings from parent */
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* Button Base */
+button {
+    cursor: pointer; /* Hand cursor on hover */
+}
+
+/* Textarea Base */
+textarea {
+    resize: vertical; /* Limit resizing to vertical */
+}
+
+/* Image Reset */
+img {
+    /* Ensure images are responsive and not overflowing */
+    max-width: 100%;
+    display: block;
+    /* Remove bottom spacing sometimes added by browsers */
+    /* vertical-align: middle; */
+}
+
+/* Table Reset */
+table {
+    /* Remove default spacing and borders */
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+/* Form Element Reset */
+input, textarea, select, button {
+    /* Remove the default font styling on forms for consistency */
+    font: inherit;
+}
+
+/* Fieldset Reset */
+fieldset {
+    border: none; /* Remove default border */
+    padding: 0; /* Clear padding */
+    margin: 0; /* Clear margin */
+}
+
+/* HTML5 Element Reset */
+/* Ensure newer HTML5 elements are block-level */
+article, aside, details, figcaption, figure, footer, header, main, nav, section {
+    display: block;
+}
+
+/* Anchor Hover State (optional) */
+a:hover {
+    text-decoration: underline; /* Optional hover effect */
+}
+
+/* Base Font Settings */
+/* Reset font size, family, and weight for better consistency */
+html {
+    font-size: 100%; /* Reset font size to ensure no unexpected scaling */
+}
+
+/* Input and Button Consistency */
+/* Remove outline when focusing (only for accessibility-focused designs) */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+/* whole body */
+
+html, body {
+    overflow-x: hidden;
+    height: 100%; 
+}
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  background-color: #6B4F4F;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  transition: background-color 0.3s ease;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.navbar:hover {
+  background-color: #5a3d3d;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #A3C9A8;
+}
+
+.navbar .logo h1 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+/* Navbar Links */
+.navbar .nav-links ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links li {
+  margin-right: 30px;
+  position: relative;
+}
+
+.navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+  color: #1bbc9b;
+  transform: translateY(-5px);
+}
+
+/* Dropdown Menu */
+.navbar .nav-links li:hover .dropdown-content {
+  display: block;
+}
+
+.navbar .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #6B4F4F;
+  min-width: 200px;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  padding: 10px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .dropdown-content a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 8px 16px;
+  transition: background-color 0.3s ease;
+}
+
+.navbar .dropdown-content a:hover {
+  background-color: #5161ce;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger-menu i {
+  font-size: 30px;
+  color: white;
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+  .navbar .nav-links {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: #6B4F4F;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .navbar .nav-links.active {
+    display: flex;
+  }
+
+  .navbar .nav-links ul {
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .navbar .nav-links li {
+    margin: 10px 0;
+  }
+
+  .navbar .nav-links a {
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+  }
+  
+  /* Gallery Page Layout */
+  .gallery-page {
+    /* padding: 20px; */
+    background-color: #f8f3eb
+  }
+  
+  /* Header Styling */
+  .gallery-header {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #f8f3eb;
+  }
+  
+  .gallery-header h1 {
+    font-size: 2.5rem;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  
+  .gallery-header p {
+    font-size: 1.1rem;
+    color: #666;
+  }
+  
+  /* Filters Styling */
+  .gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+  }
+  
+  .gallery-filters select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+  }
+  
+  /* Gallery Grid Styling */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    /* padding: 10px; */
+  }
+  
+  .dog-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .dog-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .dog-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .dog-info {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .dog-info h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .dog-info p {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  /* Animation */
+  .fadeIn {
+    animation: fadeIn 0.8s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  
+
+
+
+  .filters {
+    margin: 20px;
+    text-align: center;
+  }
+
+  .filters select {
+    padding: 8px;
+    margin: 0 10px;
+    font-size: 16px;
+  }
+
+  .dog-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+
+  .dog-card {
+    width: 200px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .dog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .dog-card h3, .dog-card p {
+    padding: 10px;
+    text-align: center;
+  }
+
+  .dog-card:hover {
+    transform: scale(1.05);
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #fafafa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Gallery Page Layout */
+.gallery-page {
+    /* padding: 30px; */
+    background-color: #fafafa;
+}
+
+/* Header Styling */
+.gallery-header {
+    text-align: center;
+    padding: 30px 0;
+    background-color: #f8f3eb;
+    border-bottom: 3px solid #ddd;
+}
+
+.gallery-header h1 {
+    font-size: 3rem;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.gallery-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Filters Styling */
+.gallery-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.gallery-filters select {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.gallery-filters select:hover {
+    background-color: #e0e0e0;
+}
+
+/* Gallery Grid Styling (5 Cards per Row) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 cards per row */
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Card Styling */
+.dog-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transform: scale(1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.dog-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.dog-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+/* Dog Info Section */
+.dog-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.dog-info h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.dog-info p {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+/* Footer */
+.bg-footer {
+  background-color: #6B4F4F;
+  padding: 50px 0 30px;
+}
+.footer-heading {
+  letter-spacing: 2px;
+}
+
+.footer-link a {
+  color: #acacac;
+  line-height: 40px;
+  font-size: 14px;
+  transition: all 0.5s;
+}
+
+.footer-link a:hover {
+  color: #1bbc9b;
+}
+
+.contact-info {
+  color: #acacac;
+  font-size: 14px;
+}
+
+.footer-social-icon {
+  font-size: 15px;
+  height: 34px;
+  width: 34px;
+  line-height: 34px;
+  border-radius: 3px;
+  text-align: center;
+  display: inline-block;
+}
+
+.facebook {
+  background-color: #4e71a8;
+  color: #ffffff;
+}
+
+.twitter {
+  background-color: #55acee;
+  color: #ffffff;
+}
+
+.google {
+  background-color: #d6492f;
+  color: #ffffff;
+}
+
+.apple {
+  background-color: #424041;
+  color: #ffffff;
+}
+
+.footer-alt {
+  color: #acacac;
+}
+
+.footer-heading {
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer-heading:after {
+  content: '';
+  width: 25px;
+  border-bottom: 1px solid #FFF;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  border-bottom: 1px solid #1bbc9b;
+}
+
+
+
+
+/* Animations */
+.fadeIn {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+    }
+}
+
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* 1 card per row */
+    }
+}

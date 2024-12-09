@@ -1,0 +1,751 @@
+/* Global Box-Sizing and Margin/Padding Reset */
+*,
+*::before,
+*::after {
+    /* Set all elements to have a border-box model for more intuitive sizing */
+    box-sizing: border-box;
+    /* Remove default margin and padding on all elements */
+    margin: 0;
+    padding: 0;
+}
+
+/* Base Body Styling */
+body {
+    /* Enable smooth font rendering */
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Full width of the viewport */
+    width: 100%;
+    /* Allow for better control in flex and grid layouts */
+    min-height: 100vh;
+}
+
+/* Link Styling */
+a {
+    /* Remove underline and use color inheritance */
+    text-decoration: none;
+    color: inherit;
+}
+
+/* List Reset (ul, ol) */
+ul, ol {
+    /* Remove bullets and reset padding for a clean slate */
+    list-style: none;
+    padding-left: 0;
+}
+
+/* Heading and Paragraph Reset */
+h1, h2, h3, h4, h5, h6, p {
+    font-weight: normal; /* Reset bold default */
+    margin: 0; /* Clear margin for consistency */
+}
+
+/* Button and Input Reset */
+button,
+input,
+textarea,
+select {
+    /* Remove default styling for buttons and inputs */
+    font: inherit; /* Inherit font settings from parent */
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* Button Base */
+button {
+    cursor: pointer; /* Hand cursor on hover */
+}
+
+/* Textarea Base */
+textarea {
+    resize: vertical; /* Limit resizing to vertical */
+}
+
+/* Image Reset */
+img {
+    /* Ensure images are responsive and not overflowing */
+    max-width: 100%;
+    display: block;
+    /* Remove bottom spacing sometimes added by browsers */
+    /* vertical-align: middle; */
+}
+
+/* Table Reset */
+table {
+    /* Remove default spacing and borders */
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+/* Form Element Reset */
+input, textarea, select, button {
+    /* Remove the default font styling on forms for consistency */
+    font: inherit;
+}
+
+/* Fieldset Reset */
+fieldset {
+    border: none; /* Remove default border */
+    padding: 0; /* Clear padding */
+    margin: 0; /* Clear margin */
+}
+
+/* HTML5 Element Reset */
+/* Ensure newer HTML5 elements are block-level */
+article, aside, details, figcaption, figure, footer, header, main, nav, section {
+    display: block;
+}
+
+/* Anchor Hover State (optional) */
+a:hover {
+    text-decoration: underline; /* Optional hover effect */
+}
+
+/* Base Font Settings */
+/* Reset font size, family, and weight for better consistency */
+html {
+    font-size: 100%; /* Reset font size to ensure no unexpected scaling */
+}
+
+/* Input and Button Consistency */
+/* Remove outline when focusing (only for accessibility-focused designs) */
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+/* whole body */
+
+html, body {
+    overflow-x: hidden;
+    height: 100%; 
+}
+
+/* Navbar */
+
+
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    background-color: #6B4F4F;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    transition: background-color 0.3s ease;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.navbar:hover {
+    background-color: #5a3d3d;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #A3C9A8;
+}
+
+.navbar .logo h1 {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+/* Navbar Links */
+.navbar .nav-links ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    margin-right: 30px;
+    position: relative;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #1bbc9b;
+    transform: translateY(-5px);
+}
+
+/* Dropdown Menu */
+.navbar .nav-links li:hover .dropdown-content {
+    display: block;
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #6B4F4F;
+    min-width: 200px;
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    padding: 10px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.navbar .dropdown-content a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .dropdown-content a:hover {
+    background-color: #5161ce;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.hamburger-menu i {
+    font-size: 30px;
+    color: white;
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+    .navbar .nav-links {
+        display: none;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #6B4F4F;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .navbar .nav-links.active {
+        display: flex;
+    }
+
+    .navbar .nav-links ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .navbar .nav-links li {
+        margin: 10px 0;
+    }
+
+    .navbar .nav-links a {
+        font-size: 20px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+
+
+/* Hero Section */
+
+.hero {
+    /* background-image: url('dog.jpg');
+    background-color: #F2E5D7; */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    color: white;
+    
+    
+}
+
+/* Video Background Styling */
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Ensures video scales to cover */
+    z-index: -1; /* Keeps video behind other elements */
+}
+
+.hero h1 {
+    font-weight: 700;
+    
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.hero a {
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    background-color: #A3C9A8;
+    border-radius: 20px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.hero a:hover {
+    background-color: #87b68b; /* Slightly darker green */
+    border-color: #87b68b;
+    transition: background-color 0.3s;
+}
+
+/* introduction Section */
+
+.introduction {
+    background-color: #F2E5D7;
+    width: 100vw;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+}
+
+/* home breed */
+/* Home Breed Section */
+.home-breed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+    opacity: 0; /* Start hidden for animation */
+    animation: fadeInUp 1s ease-in-out forwards; /* Fade-in effect on load */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-breed h2 {
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    padding-left: 25px;
+}
+
+.home-breed-card {
+    width: 80%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+}
+
+.home-breed-card a {
+    background-color: #87b68b;
+    border-color: #87b68b;
+}
+
+.home-breed-card:hover {
+    transform: translateY(-10px); /* Lift card slightly */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.home-breed:last-child {
+    margin-bottom: 50px;
+}
+
+
+/* home featured */
+
+/* Home Featured Section */
+.home-featured {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background-color: #F2E5D7;
+}
+
+.home-featured-card .card-deck {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 40px;
+}
+
+.home-featured-card .card {
+    width: 250px;
+    background-color: #F7F2E7;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+}
+
+.home-featured-card .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.home-featured-card .card h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.home-featured-card .card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.home-featured-card .card button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #6B4F4F;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.home-featured-card .card button:hover {
+    background-color: #543a3a;
+}
+
+
+/* gallery section */
+.container .row {
+    margin: 15px;
+  }
+
+.home-gallery-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    padding: 30px 0 30px 0;
+    text-align: center;
+}
+
+.home-gallery-text p {
+    width: 50%;
+}
+
+.home-gallery-btn  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.home-gallery-btn a {
+    border: 2px solid white;
+    background-color: #A3C9A8;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius:20px ;
+    width: 150px;
+
+}
+
+.home-gallery-btn a:hover {
+    background-color: #87b68b; /* Slightly darker green */
+    border-color: #87b68b;
+    transition: background-color 0.3s;
+}
+
+
+/* tips and Resources Home */
+/* General container styling */
+.dog-care-resources {
+    background-color: #f9f7f1; /* Light beige for a warm, inviting background */
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: auto;
+    margin-bottom: 40px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Heading styling */
+.dog-care-resources h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.dog-care-resources p {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Card container styling */
+.resource-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Card styling */
+.dog-care-resources .card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    max-width: 250px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.dog-care-resources .card h3 {
+    color: #00796b; /* Calming teal color */
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.dog-care-resources .card p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+/* Link styling in cards */
+.dog-care-resources .card a {
+    color: #00796b;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid #00796b;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.dog-care-resources .card a:hover {
+    color: #004d40; /* Darker teal on hover */
+    border-bottom-color: #004d40;
+}
+
+/* Card hover effect */
+.dog-care-resources .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Button styling */
+.dog-care-resources .button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 24px;
+    color: #ffffff;
+    background-color: #00796b;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.dog-care-resources .button:hover {
+    background-color: #004d40;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    
+}
+
+
+/* Footer */
+.bg-footer {
+    background-color: #6B4F4F;
+    padding: 50px 0 30px;
+}
+.footer-heading {
+    letter-spacing: 2px;
+}
+
+.footer-link a {
+    color: #acacac;
+    line-height: 40px;
+    font-size: 14px;
+    transition: all 0.5s;
+}
+
+.footer-link a:hover {
+    color: #1bbc9b;
+}
+
+.contact-info {
+    color: #acacac;
+    font-size: 14px;
+}
+
+.footer-social-icon {
+    font-size: 15px;
+    height: 34px;
+    width: 34px;
+    line-height: 34px;
+    border-radius: 3px;
+    text-align: center;
+    display: inline-block;
+}
+
+.facebook {
+    background-color: #4e71a8;
+    color: #ffffff;
+}
+
+.twitter {
+    background-color: #55acee;
+    color: #ffffff;
+}
+
+.google {
+    background-color: #d6492f;
+    color: #ffffff;
+}
+
+.apple {
+    background-color: #424041;
+    color: #ffffff;
+}
+
+.footer-alt {
+    color: #acacac;
+}
+
+.footer-heading {
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-heading:after {
+    content: '';
+    width: 25px;
+    border-bottom: 1px solid #FFF;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: block;
+    border-bottom: 1px solid #1bbc9b;
+}
+
+
+
+/* Css Animation */
+
+.fadeInLeft { animation-name: fadeInLeft }
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to { opacity: 1 }
+}
+
+.fadeInRight { animation-name: fadeInRight }
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to { opacity: 1 }
+}
+
+
+/* Responsive design */
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .navbar .logo h1  { 
+
+        font-size: 25px;
+        
+    }
+
+    .navbar .nav-links {
+
+        display: none;
+    }
+
+     
+    .hero {
+        padding: 25px;
+        
+    }
+
+    .home-featured-card .card-deck {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .container .row {
+        gap: 15px;
+    }
+
+    .home-gallery-text h2 {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+
+   
+}
